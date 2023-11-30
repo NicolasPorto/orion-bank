@@ -12,7 +12,7 @@ import TermosPolitica from '../pages/TermosPolitica';
 import ExtratoConta from '../pages/SidebarPages/ExtratoConta';
 import Dados from '../pages/SidebarPages/Conta/Dados';
 
-import SolicitacoesConta from '../pages/SidebarPages/Admin/SolicitacoesConta';
+import SolicitacoesConta from '../pages/SideBarPages/Admin/SolicitacoesConta';
 import CadastrarChave from '../pages/SidebarPages/AreaPix/CadastrarChave';
 import Pix from '../pages/SidebarPages/AreaPix/Pix';
 import QRCode from '../pages/SidebarPages/AreaPix/QRCode';
