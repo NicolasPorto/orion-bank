@@ -1,4 +1,4 @@
-import { QRCode } from "../../../domain/entities/QRCode";
+import { QRCode } from "../../../domain/entities/QrCode";
 import { IQRCodeRepository } from "../../../Domain/Interfaces/QRCode/IQRCodeRepository";
 import { QRCodeContaRawQuery } from "../../../Domain/RawQuery/QRCodeContaRawQuery";
 import { connection } from "../../context/ConnectionString";

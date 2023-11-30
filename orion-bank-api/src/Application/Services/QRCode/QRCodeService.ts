@@ -3,7 +3,7 @@ import { QRCodeDto } from "../../DTOs/QRCodeDto";
 import { IQRCodeService } from "../../Interfaces/QRCode/IQRCodeService";
 import { QRCodeContaRawQuery } from "../../../Domain/RawQuery/QRCodeContaRawQuery";
 import { createStaticPix, hasError, parsePix } from 'pix-utils';
-import { QRCode } from "../../../domain/entities/QRCode";
+import { QRCode } from "../../../domain/entities/QrCode";
 import { v4 as uuidv4 } from "uuid";
 
 const qrCodeRepository = new QRCodeRepository()
