@@ -1,4 +1,4 @@
-import { Conta } from "../../Domain/Entities/Conta";
+import { Conta } from "../../domain/entities/Conta";
 import { connection } from "../context/ConnectionString"
 import { IAutenticacaoRepository } from "../../Domain/Interfaces/IAutenticacaoRepository";
 import { AutenticacaoDto } from "../../Application/DTOs/AutenticacaoDto";

@@ -1,5 +1,5 @@
 import { AbrirContaRepository } from "../../../Data/Repositories/CriarConta/AbrirContaRepository";
-import { Conta } from "../../../Domain/Entities/Conta";
+import { Conta } from "../../../domain/entities/Conta";
 import { ContaDto } from "../../DTOs/ContaDto";
 import { SolicitacaoAberturaContaDto } from "../../DTOs/SolicitacaoAberturaContaDto";
 import { IAbrirContaService } from "../../Interfaces/CriarConta/IAbrirContaService";
