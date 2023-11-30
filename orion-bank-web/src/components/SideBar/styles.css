@@ -1,0 +1,287 @@
+li {
+    list-style-type: none;
+}
+
+/* SIDE BAR OPEN */
+#sidebar.sidebar-open .custom-ul {
+    margin-top: 1.45rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    z-index: 10;
+}
+
+#sidebar.sidebar-open .sub-nav>li>a {
+    padding-left: 1px;
+}
+
+#sidebar.sidebar-open .sub-sub-nav>li>a {
+    padding-left: 1px;
+}
+
+#sidebar.sidebar-open {
+    background: #ffffff;
+    color: black;
+    box-shadow: 7px 0px 20px rgba(0, 0, 0, 0.041);
+    margin-top: 0rem;
+    display: block;
+    transition-duration: 0.45s;
+    min-height: calc(100vh - 60px);
+    font-family: "Inter";
+    margin-right: 0px;
+    min-width: 270px;
+    max-width: 270px;
+}
+
+#sidebar.sidebar-open.custom ul li a {
+    color: rgb(0, 0, 0);
+    text-align: left;
+    display: flex;
+    transition-duration: 0.45s;
+    transition: .0s all ease;
+    padding: 10px 20px;
+}
+
+#sidebar.sidebar-open .custom-ul .top-content li {
+    margin-top: 5px;
+}
+
+#sidebar.sidebar-open.custom a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+    background: #DB4648;
+    border-radius: 10px;
+}
+
+#sidebar.sidebar-open.custom .sub-nav a {
+    padding-left: 20%;
+}
+
+#sidebar.sidebar-open .sub-nav {
+    margin-left: 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+#sidebar.sidebar-open .sub-nav li {
+    margin-top: 0px;
+}
+
+#sidebar.sidebar-open.custom i {
+    margin-right: 1rem;
+}
+
+#sidebar.sidebar-open .custom-ul .active,
+#sidebar.sidebar-open .sub-sub-nav .active,
+#sidebar.sidebar-open .sub-nav .active {
+    background: #DB4648;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.menu-arrow {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.menu-arrow.open {
+    transform: rotate(90deg);
+}
+
+/* SIDE BAR CLOSED ============================================================== */
+
+#sidebar.sidebar-closed {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    box-shadow: 7px 0px 20px rgba(0, 0, 0, 0.041);
+    min-height: calc(100vh - 60px);
+    min-width: 80px;
+    max-width: 80px;
+    display: flex;
+    transition-duration: 0.45s;
+}
+
+#sidebar.sidebar-closed .custom-ul {
+    margin-top: 1.45rem;
+    z-index: 10;
+}
+
+#sidebar.sidebar-closed.custom ul li a {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    display: flex;
+    transition-duration: 0.45s;
+    max-width: 80px;
+    padding: 10px 25px;
+}
+
+#sidebar.sidebar-closed.custom span {
+    display: none;
+}
+
+#sidebar.sidebar-closed.custom a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+#sidebar.sidebar-closed.custom .menu-arrow {
+    display: none;
+}
+
+#sidebar.sidebar-closed.custom li:hover {
+    background: #DB4648;
+    cursor: pointer;
+}
+
+#sidebar.sidebar-closed .custom-ul .top-content li {
+    margin-top: 5px;
+    width: 100%;
+}
+
+#sidebar.sidebar-closed .custom-ul .active,
+#sidebar.sidebar-closed .sub-sub-nav .active,
+#sidebar.sidebar-closed .sub-nav .active,
+#sidebar.sidebar-closed .sub-nav .active li {
+    background: #DB4648;
+    cursor: pointer;
+}
+
+#sidebar.sidebar-closed .sub-nav.open,
+#sidebar.sidebar-closed .sub-sub-nav.open {
+    position: absolute;
+    left: 80px;
+    width: 240px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#sidebar.sidebar-closed .sub-nav.open {
+    margin-left: 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+#sidebar.sidebar-closed .menu-title {
+    display: none;
+}
+
+#sidebar.sidebar-closed .sub-nav.open li,
+#sidebar.sidebar-closed .sub-sub-nav.open li {
+    margin-top: 0px;
+    padding-left: 20px;
+}
+
+#sidebar.sidebar-closed .sub-nav.open a,
+#sidebar.sidebar-closed .sub-sub-nav.open a {
+    padding: 10px 0px;
+    max-width: 200px;
+}
+
+#sidebar.sidebar-closed .sub-nav.open li:hover,
+#sidebar.sidebar-closed .sub-sub-nav.open li:hover {
+    background-color: #DB4648;
+    color: #ffffff;
+}
+
+/* ------------------------ */
+
+.top-content {
+    height: calc(100vh - 150px);
+    cursor: pointer;
+    
+}
+
+#sidebar.sidebar-open .sub-nav,
+#sidebar.sidebar-closed .sub-nav {
+    display: none;
+}
+
+#sidebar.sidebar-open .sub-nav.open,
+#sidebar.sidebar-closed .sub-nav.open {
+    display: block;
+}
+
+#sidebar.sidebar-open .sub-sub-nav,
+#sidebar.sidebar-closed .sub-sub-nav {
+    display: none;
+}
+
+#sidebar.sidebar-open .sub-sub-nav.open,
+#sidebar.sidebar-closed .sub-sub-nav.open {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    #sidebar.sidebar-open {
+        background: #ffffff;
+        color: rgb(0, 0, 0);
+        box-shadow: 7px 0px 20px rgba(0, 0, 0, 0.041);
+        min-height: calc(100vh - 60px);
+        min-width: 80px;
+        max-width: 90px;
+        padding: 2% 0% 0% 0%;
+        display: flex;
+        transition-duration: 0.45s;
+        margin-left: 0px !important;
+    }
+
+    #sidebar.sidebar-open.custom ul li a {
+        color: rgb(0, 0, 0);
+        text-align: center;
+        display: flex;
+        max-width: 80px;
+        padding: 10px 25px;
+    }
+
+    #sidebar.sidebar-open.custom span {
+        display: none;
+    }
+
+    #sidebar.sidebar-open.custom a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+        cursor: pointer;
+        border-radius: 0px;
+        color: #ffffff;
+    }
+
+    #sidebar.sidebar-open .menu-arrow {
+        display: none;
+    }
+
+    #sidebar.sidebar-open.custom .sub-nav li {
+        margin-top: 0px;
+    }
+
+    #sidebar.sidebar-open.custom li:hover {
+        background-color: #DB4648;
+    }
+
+    #sidebar.sidebar-open .sub-nav.open {
+        position: absolute;
+        left: 80px;
+        width: 240px;
+        background-color: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    #sidebar.sidebar-open .sub-nav.open a {
+        padding: 10px 10px;
+        max-width: 200px;
+    }
+
+    #sidebar.sidebar-open .custom-ul .active,
+    #sidebar.sidebar-open .sub-sub-nav .active,
+    #sidebar.sidebar-open .sub-nav .active {
+        background: #DB4648;
+        border-radius: 0px;
+        cursor: pointer;
+    }
+
+    #sidebar.sidebar-open .custom-ul {
+        margin-top: 1.45rem;
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
+}

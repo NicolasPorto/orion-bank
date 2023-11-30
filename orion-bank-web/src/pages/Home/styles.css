@@ -1,0 +1,267 @@
+.home-page {
+
+    text-align: start;
+}
+
+.content-wrapper {
+    background: #F5F7FF;
+    padding: 1.5rem 1.5rem;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}
+
+.row2 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row3 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.doiscard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.teste {
+    width: 40%;
+    margin-right: 25px;
+}
+
+.spaceb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+
+}
+
+.btn-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn-body img {
+    width: 50px;
+
+}
+
+.card.card-light-danger {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    color: #EB4E50;
+    margin-bottom: 15px;
+    box-shadow: 1px 1px 7px #d8dada;
+    border-radius: 9px;
+    width: 104px;
+    height: 104px;
+
+}
+
+.card-body2 {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+
+.grid-margin2 {
+    margin-bottom: 2.5rem;
+    width: 30vw
+}
+
+.titulo-tabela {
+    font-size: 18px;
+    color: #EB4E50;
+}
+
+.card-cartao {
+    position: relative;
+    background-color: rgba(219, 70, 72, 0.7);
+    border-radius: 9px;
+    padding: 5px;
+
+}
+
+.card-saldo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 314px;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+.cartao {
+    width: 50%;
+}
+
+.tabelita {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 9px;
+    width: 40%;
+    margin-right: 27px;
+}
+
+.texto-card {
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.cartao-img {
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    padding-right: 5px;
+}
+
+.card-cartao:hover .middle {
+    opacity: 1;
+}
+
+.card-cartao:hover .cartao-img {
+    opacity: 0.3;
+}
+
+.texto {
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+.btn-solicita {
+    align-items: center;
+    background-color: #DB4648;
+    border: 1.4px solid #DB4648;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    fill: #000;
+    font-size: 18px;
+    height: 45px;
+    justify-content: center;
+    letter-spacing: -.8px;
+    line-height: 24px;
+    outline: 0;
+    padding: 0 17px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    border-radius: 5px;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    flex-shrink: 0;
+    font-family: "Inter", sans-serif;
+}
+
+.btn-solicita:focus {
+    color: #ffffff;
+}
+
+.btn-solicita:hover {
+    color: #DB4648;
+    background-color: rgb(255, 255, 255);
+    fill: #DB4648;
+}
+
+.btn-solicita:active {
+    color: rgb(255, 255, 255);
+    background-color: #DB4648;
+    fill: #DB4648;
+}
+
+@media (max-width: 1220px) {
+    .teste {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .row-cards {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+}
+
+@media (max-width: 1158px) {
+    .row3 {
+        flex-direction: column;
+    }
+
+    .tabelita {
+        width: 100%;
+    }
+
+    .cartao {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+}
+
+@media (max-width: 627px) {
+    .spaceb {
+        justify-content: space-evenly;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    /* .card.card-light-danger {
+       gap: 5px;
+    } */
+
+    /* .btn-body img {
+        width: 100%;
+
+    } */
+}
+
+/* @media (max-width: 495px) {
+    .card.card-light-danger{
+        width: 46%;
+    }
+    .card.card-light-danger img{
+        width: 100%;
+    }
+ 
+} */

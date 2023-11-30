@@ -1,0 +1,21 @@
+.container-texto-termos {
+    height: 500px;
+    width: 500px;
+    margin-left: 3%;
+    margin-top: 10%;
+}
+
+.termos-texto {
+    text-align: justify;
+}
+
+@media (max-width: 574px) {
+    .container-texto-termos {
+        font-size: 13px;
+        height: 130%;
+        width: 100%;
+        margin-left: 3%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+  }

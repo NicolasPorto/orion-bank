@@ -1,0 +1,25 @@
+.textoSenha,
+.textoAlteracaoSenha {
+    text-align: justify;
+}
+
+.div-texto-senha {
+    height: 90px;
+}
+
+.campos-recuperar {
+    height: 100px;
+}
+
+.campos-alterar {
+    height: 150px;
+}
+
+.senhas-dif {
+    font-size: 13px;
+    color: red;
+}
+
+.custom-center-success {
+    height: 140px;
+}

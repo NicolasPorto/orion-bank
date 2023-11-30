@@ -1,0 +1,101 @@
+.name,
+.sobrenome {
+    width: 100%;
+}
+
+.campoEtapaTres {
+  height: 280px;
+}
+
+.preenche {
+  height: 26px;
+  width: 27px;
+}
+.subtitulo {
+  color: rgba(0, 0, 0, 0.24);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.slideGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+.cor-padrao { 
+  color: #DB4648;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8%;
+}
+
+.flecha {
+  cursor: pointer;
+}
+
+.campos {
+  height: 260px;
+}
+
+.container-texto {
+  height: 100%;
+}
+
+.textoFinal {
+  text-align: justify;
+  height: 100px;
+}
+
+.textoSucesso {
+  text-align: justify;
+  height: 230px;
+}
+
+.checkboxForm {
+  text-align: justify;
+  align-items: center;
+  font-size: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  height: 70px;
+}
+
+.checkbox {
+  margin-top: 0.4rem;
+  cursor: pointer;
+  margin-right: 0.4rem;
+}
+
+.termos {
+  color:#DB4648;
+}
+
+.termos:hover {
+  color: #7e3132;
+}
+
+@media (max-width: 574px) {
+  .campos {
+    height: 380px;
+  }  
+  .campoEtapaTres{
+    height: 400px;
+  }
+  .checkboxForm {
+    height: 100px;
+  }
+  .textoSucesso {
+    text-align: justify;
+    height: 320px;
+  }
+}
