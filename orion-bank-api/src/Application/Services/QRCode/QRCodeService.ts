@@ -24,7 +24,10 @@ export class QRCodeService implements IQRCodeService {
 
         if (response !== undefined) {
             const pix = parsePix(emv);
-            response.ChavePix = pix.pixKey;
+
+            if ('pixKey' in pix) {
+                response.ChavePix = pix.pixKey;
+            }
         }
 
         return response
