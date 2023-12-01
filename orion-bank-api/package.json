@@ -9,11 +9,6 @@
     "build": "tsc",
     "start": "node dist"
   },
-  "pre-commit": [
-    "ts.check",
-    "build",
-    "add-build"
-  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -27,9 +22,7 @@
     "nodemon": "^3.0.1",
     "path": "^0.12.7",
     "pix-utils": "^2.5.0",
-    "pre-commit": "^1.2.2",
     "puppeteer": "^21.5.1",
-    "rimraf": "^5.0.5",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   },
