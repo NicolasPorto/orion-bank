@@ -201,7 +201,6 @@ const ExtratoConta = () => {
             </div>
         </div>
     );
-
 }
 
 export default ExtratoConta;
