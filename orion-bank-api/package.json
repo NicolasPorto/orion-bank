@@ -17,9 +17,11 @@
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.6.1",
     "nodemailer": "^6.9.7",
+    "nodemon": "^3.0.1",
     "path": "^0.12.7",
     "pix-utils": "^2.5.0",
     "puppeteer": "^21.5.1",
+    "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
