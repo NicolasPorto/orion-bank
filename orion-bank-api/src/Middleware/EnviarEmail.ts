@@ -31,7 +31,7 @@ export async function EnviarEmail(emailConta: string, htmlEmail: string, titulo:
         attachments: [
             {
                 filename: "logo-orion-bank.png",
-                path: "src/Middleware/Logo/logo-orion-bank.png", 
+                path: "Logo/logo-orion-bank.png", 
                 cid: emailConta, 
             }
         ]
