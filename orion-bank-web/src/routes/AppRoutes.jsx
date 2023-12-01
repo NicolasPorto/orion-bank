@@ -9,7 +9,7 @@ import SucessoSolicitacao from '../pages/SolicitarConta/SucessoSolicitacao';
 import RecuperarSenha from '../pages/RecuperarSenha';
 import SucessoRecuperarSenha from '../pages/RecuperarSenha/SucessoRecuperar';
 import TermosPolitica from '../pages/TermosPolitica';
-import ExtratoConta from '../pages/SidebarPages/ExtratoConta';
+import ExtratoConta from '../pages/SideBarPages/ExtratoConta';
 import Dados from '../pages/SideBarPages/Conta/Dados';
 
 import SolicitacoesConta from '../pages/SideBarPages/Admin/SolicitacoesConta';
