@@ -220,7 +220,7 @@ const Pix = () => {
             codigoContaDestino: responseConsulta.Codigo,
             emv: qrCodeResult,
             valor: formatarValor(responseConsulta.Valor),
-            infoAdicional: infoAdicional
+            infoAdicional: responseConsulta.InfoAdicional
         }
         await enviarPixViaEMV(request);
         closeModalLerQrCode();
@@ -447,7 +447,7 @@ const Pix = () => {
                                                 </div>
                                             </div>
                                             <div className="mt-3">
-                                                <label className="add-mensagem" onClick={() => setInfoIsOn(!infoIsOn)}>Adicionar mensagem</label>
+                                                <label className="add-mensagem" onClick={() => setInfoIsOn(true)}>Info Adicional</label>
                                                 {infoIsOn && (
                                                     <input
                                                         type="text"
@@ -456,8 +456,8 @@ const Pix = () => {
                                                         placeholder="Mensagem"
                                                         name="infoAdicional"
                                                         maxLength={255}
-                                                        value={infoAdicional}
-                                                        onChange={(e) => setInfoAdicional(e.target.value)}
+                                                        disabled
+                                                        value={responseConsulta.InfoAdicional}
                                                     />
                                                 )}
                                             </div>

@@ -28,6 +28,10 @@ export class QRCodeService implements IQRCodeService {
             if ('pixKey' in pix) {
                 response.ChavePix = pix.pixKey;
             }
+
+            if ('infoAdicional' in pix) {
+                response.InfoAdicional = pix.infoAdicional ?? '';
+            }
         }
 
         return response

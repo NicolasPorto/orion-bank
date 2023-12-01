@@ -71,7 +71,7 @@ export class AbrirContaService implements IAbrirContaService {
 
         const abrirContaRepository = new AbrirContaRepository()
         const conta = await abrirContaRepository.BuscarContaPorDocumentoFederal(documentoFederal.replace(/[^0-9]/g, ""))
-        console.log(conta)
+        
         if(!conta) {
             return false;
         }

@@ -296,7 +296,7 @@ const SolicitarConta = () => {
                                                                 className="numero form-control"
                                                                 id="numero"
                                                                 aria-describedby="numeroHelp"
-                                                                placeholder="Numero"
+                                                                placeholder="Número"
                                                                 maxLength={10}
                                                                 value={solicitacaoRequest.numero}
                                                                 onChange={(e) => setSolicitacaoRequest({ ...solicitacaoRequest, numero: e.target.value })}

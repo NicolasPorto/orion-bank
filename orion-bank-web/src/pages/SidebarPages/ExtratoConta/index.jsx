@@ -114,8 +114,8 @@ const ExtratoConta = () => {
                     </Modal.Header>
                     <Modal.Body>
                         <div className="container-data">
+                            <label className="mt-2 mr-2" style={{ color: "#3f3d56" }}>Data inicial </label>
                             <div>
-                                <label className="mt-4 mr-2" style={{ color: "#3f3d56" }}>Data inicial: </label>
                                 <input
                                     type="date"
                                     name="nDtInicio"
@@ -124,8 +124,8 @@ const ExtratoConta = () => {
                                     onChange={(e) => setdtInicio(e.target.value)}
                                 />
                             </div>
+                            <label className="mt-4 mr-3" style={{ color: "#3f3d56" }}>Data final </label>
                             <div>
-                                <label className="mt-4 mr-3" style={{ color: "#3f3d56" }}>Data final: </label>
                                 <input
                                     type="date"
                                     name="nDtFim"
@@ -164,7 +164,7 @@ const ExtratoConta = () => {
 
                     <div>
                         <div>
-                            <Button style={{marginRight: "7px"}} variant="success" as="input" type="submit" value="Filtrar" className="estilo-botao" onClick={openModalFiltrar} />
+                            <Button style={{ marginRight: "7px" }} variant="success" as="input" type="submit" value="Filtrar" className="estilo-botao" onClick={openModalFiltrar} />
                             <Button variant="success" as="input" type="submit" value="Exportar" className="estilo-botao" onClick={extratoPDF} />
                         </div>
                     </div>
@@ -188,7 +188,7 @@ const ExtratoConta = () => {
                                     <td>{formatarData(record.Data)}</td>
                                     <td>{formatarEnum(record.TipoTransacao)}</td>
                                     <td>{record.IsSaida === true ? record.NomeDestino : record.NomeOrigem}</td>
-                                    <td>{record.Descricao.substring(0,30)}</td>
+                                    <td>{record.Descricao.substring(0, 30)}</td>
                                     <td>{record.CodigoContaOrigem === user.codigo ?
                                         <span style={{ "color": "red" }}>-{formatarDinDin(record.Valor)}</span> :
                                         <span style={{ "color": "green" }}>+{formatarDinDin(record.Valor)}</span>}

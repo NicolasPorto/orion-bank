@@ -21,7 +21,7 @@ export class AutenticacaoRepository implements IAutenticacaoRepository {
         const autenticacao = await (await connection).query(
             sql,
             parametros) as unknown as Conta;
-        console.log(connection)
+        
         return autenticacao;
     }
 }

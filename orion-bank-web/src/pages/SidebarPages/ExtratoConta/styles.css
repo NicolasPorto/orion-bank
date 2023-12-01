@@ -25,12 +25,7 @@
     margin: 0px;
 }
 
-.tabela-2{
-    
-}
-
-
-.table-solicitar1{
+.table-solicitar1 {
     height: 100%;
     border: 1px solid #cacaca;
     border-radius: 5px;
@@ -45,40 +40,55 @@
     border-radius: 5px;
 }
 
-.div-saldo-input{
+.div-saldo-input {
     display: flex;
     flex-direction: column;
 }
 
-.container-data{
-    height: 200px;
-
+.container-data {
+    display: flex;
+    width: 100%;
     align-content: center;
     padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.modal-btn{
+.modal-btn {
     display: flex;
     justify-content: center;
 }
 
-.fs{
-    
+input[type="date"] {
+    background-color: #d46f70;
+    padding: 8px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
 }
 
+::-webkit-calendar-picker-indicator {
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+
 @media (max-width: 546px) {
-   .linha-superior{
-    flex-direction: column;
-   }
-   .card-extrato{
-    margin-bottom: 7px;
-   }
+    .linha-superior {
+        flex-direction: column;
+    }
+
+    .card-extrato {
+        margin-bottom: 7px;
+    }
 }
 
 @media (max-width: 661px) {
-    .fs{
+    .fs {
         font-size: 10px;
     }
-
- }
-
+}

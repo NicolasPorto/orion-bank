@@ -1,14 +1,19 @@
-import puppeteer from "puppeteer"
 import { ExtratoRepository } from "../../Data/Repositories/Extrato/ExtratoRepository";
 import { TipoTransacao } from "../../Enums/TipoTransacao";
 import { ValidarDataInicioMenor } from "../../Middleware/ValidarData";
+import puppeteer from "puppeteer";
 
 const _extratoRepository = new ExtratoRepository()
 
-export async function GerarPDF(codigoConta: string, dataInicio: Date, dataFim: Date) {
-    ValidarDataInicioMenor(dataInicio, dataFim)
+const { join } = require('path');
 
-    const browser = await puppeteer.launch();
+export async function GerarPDF(codigoConta: string, dataInicio: Date, dataFim: Date) {
+    ValidarDataInicioMenor(dataInicio, dataFim);
+
+    const browser = await puppeteer.launch({
+        userDataDir: join(__dirname, '.cache', 'puppeteer'),
+    });
+
     const page = await browser.newPage();
 
     await page.setContent(await PegarHTML(codigoConta, dataInicio, dataFim));

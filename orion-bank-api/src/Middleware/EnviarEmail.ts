@@ -21,11 +21,10 @@ function ConfigurarEmail(): nodemailer.Transporter<SMTPTransport.SentMessageInfo
 }
 
 export async function EnviarEmail(emailConta: string, htmlEmail: string, titulo: string): Promise<void> {
-
     const imagePath = path.join(__dirname, "Logo/logo-orion-bank.png");
     const smtp = ConfigurarEmail()
     const email = process.env.EMAIL;
-    console.log(emailConta)
+
     const configEmail = {
         from: email,
         to: emailConta,
