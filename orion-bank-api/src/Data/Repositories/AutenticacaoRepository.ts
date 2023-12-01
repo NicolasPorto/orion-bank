@@ -6,9 +6,9 @@ import { AutenticacaoDto } from "../../Application/DTOs/AutenticacaoDto";
 export class AutenticacaoRepository implements IAutenticacaoRepository {
 
     async EfetuarConsultaContaExistente(conta: AutenticacaoDto): Promise<Conta> {
-        
+
         const parametros = [
-            conta.Login, 
+            conta.Login,
             conta.Senha
         ]
 
@@ -17,11 +17,11 @@ export class AutenticacaoRepository implements IAutenticacaoRepository {
                     FROM
                         conta
                     WHERE (DocumentoFederal = ? AND Senha = MD5(?));`
-        
+
         const autenticacao = await (await connection).query(
             sql,
             parametros) as unknown as Conta;
-
+        console.log(connection)
         return autenticacao;
     }
 }

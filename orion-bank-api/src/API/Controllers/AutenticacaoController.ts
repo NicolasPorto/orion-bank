@@ -15,6 +15,7 @@ export class AutenticacaoController {
             } = request.body;
             
             const autenticacaoDto = { Login: login, Senha: senha } as AutenticacaoDto
+            console.log(autenticacaoDto)
 
             const _autenticacaoServices = new AutenticacaoService();
             const autorizado = await _autenticacaoServices.EfetuarLogin(autenticacaoDto);
@@ -29,6 +30,8 @@ export class AutenticacaoController {
             return response.status(200).send(autorizado);
 
         } catch(error: any) {
+            
+            console.log(error.message)
             return response.status(400).json({
                 status: "Error",
                 message: error.message
