@@ -7,7 +7,7 @@
     "dev": "tsx watch src/Server.ts",
     "swagger": "node Swagger.js",
     "build": "tsc",
-    "start": "node dist"
+    "start": "node dist/Server.ts"
   },
   "author": "",
   "license": "ISC",
