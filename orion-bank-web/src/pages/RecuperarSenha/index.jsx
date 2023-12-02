@@ -179,7 +179,7 @@ const RecuperarSenha = () => {
                                                                 id="senha-repetida"
                                                                 aria-describedby="senhaHelp"
                                                                 placeholder="Repetir Senha"
-                                                                maxLength={8}
+                                                                maxLength={25}
                                                                 value={senhaRepetida}
                                                                 onChange={(e) => verificarRepeticao(e.target.value)}
                                                             />
