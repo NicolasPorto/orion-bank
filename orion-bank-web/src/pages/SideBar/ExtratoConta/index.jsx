@@ -17,7 +17,7 @@ const ExtratoConta = () => {
     const [dtInicio, setdtInicio] = useState('');
     const [dtFim, setdtFim] = useState('');
     const [saldo, setSaldo] = useState(0.00);
-    const [modalFiltrarIsOpen, setModalFiltrarOpen] = useState(false);
+    const [modalFiltrarIsOpen, setModalFiltrarOpen] = useState(true);
 
     const openModalFiltrar = () => {
         setModalFiltrarOpen(true);
@@ -42,28 +42,31 @@ const ExtratoConta = () => {
     };
 
     const extratoPDF = async () => {
+
+        const request = {
+            codigoConta: user.codigo,
+            dataInicio: dtInicio,
+            dataFim: dtFim
+        }
+
+        const arquivo = await exportarPdf(request);
+
         try {
-            const request = {
-                codigoConta: user.codigo,
-                dataInicio: dtInicio,
-                dataFim: dtFim
+            if (arquivo !== undefined) {
+                const binary = atob(arquivo);
+
+                const bytes = new Uint8Array(binary.length);
+                for (let i = 0; i < binary.length; i++) {
+                    bytes[i] = binary.charCodeAt(i);
+                }
+
+                const pdf = new Blob([bytes], { type: 'application/pdf' });
+                const url = URL.createObjectURL(pdf);
+                window.open(url);
             }
-
-            const arquivo = await exportarPdf(request);
-            const binary = atob(arquivo);
-
-            const bytes = new Uint8Array(binary.length);
-            for (let i = 0; i < binary.length; i++) {
-                bytes[i] = binary.charCodeAt(i);
-            }
-
-            const pdf = new Blob([bytes], { type: 'application/pdf' });
-            const url = URL.createObjectURL(pdf);
-            window.open(url);
 
         } catch (error) {
             showErrorNotification("Erro ao exportar o PDF.");
-            console.error(error);
         }
     };
 
