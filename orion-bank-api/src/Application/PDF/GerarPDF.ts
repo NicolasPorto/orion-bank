@@ -1,17 +1,19 @@
 import { ExtratoRepository } from "../../Data/Repositories/Extrato/ExtratoRepository";
 import { TipoTransacao } from "../../Enums/TipoTransacao";
 import { ValidarDataInicioMenor } from "../../Middleware/ValidarData";
-import puppeteer from "puppeteer";
+import chromium from "chrome-aws-lambda";
 
 const _extratoRepository = new ExtratoRepository()
-
-const { join } = require('path');
 
 export async function GerarPDF(codigoConta: string, dataInicio: Date, dataFim: Date) {
     ValidarDataInicioMenor(dataInicio, dataFim);
 
-    const browser = await puppeteer.launch({
-        userDataDir: join(__dirname, '.cache', 'puppeteer'),
+    const browser = await chromium.puppeteer.launch({
+        args: [...chromium.args, "--hide-scrollbars", "--disable-web-security"],
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath,
+        headless: true,
+        ignoreHTTPSErrors: true,
     });
 
     const page = await browser.newPage();
@@ -20,7 +22,7 @@ export async function GerarPDF(codigoConta: string, dataInicio: Date, dataFim: D
 
     const arquivo = await page.pdf({
         path: 'exported_file.pdf',
-        format: 'A4',
+        format: 'a4',
         landscape: false,
     });
 
