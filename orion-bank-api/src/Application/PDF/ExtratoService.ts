@@ -31,7 +31,7 @@ export class ExtratoService implements IExtratoService {
                 Data: extrato[cont].Data,
                 TipoTransacao: extrato[cont].TipoTransacao,
                 Descricao: extrato[cont].Descricao,
-                Valor: extrato[cont].Valor,
+                Valor: extrato[cont].Valor.replace(",", ""),
                 CodigoContaDestino: extrato[cont].CodigoContaDestino,
                 CodigoContaOrigem: extrato[cont].CodigoContaOrigem,
                 NomeDestino: extrato[cont].NomeDestino,
