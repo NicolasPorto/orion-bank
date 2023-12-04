@@ -67,7 +67,6 @@ const Login = () => {
                                                     placeholder="Senha"
                                                     name="nome"
                                                     value={autenticarRequest.senha}
-                                                    maxLength={8}
                                                     onChange={(e) => setAutenticarRequest({ ...autenticarRequest, senha: e.target.value })}
                                                 />
                                                 <div className="text-right">

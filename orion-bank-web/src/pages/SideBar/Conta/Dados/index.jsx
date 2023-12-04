@@ -5,7 +5,19 @@ import "./styles.css"
 
 const Dados = () => {
     const { buscarInfoConta } = useContext(ContaContext);
-    const [responseConsulta, setResponseConsulta] = useState({});
+    const [responseConsulta, setResponseConsulta] = useState({
+        Agencia: '',
+        Conta: '',
+        ContaDigito: '',
+        DocumentoFederal: '',
+        NomeCompleto: '',
+        DtNasc: '',
+        Email: '',
+        TelefoneCelular: '',
+        CEP: '',
+        Logradouro: '',
+        NumeroResidencial: ''
+    });
 
     useEffect(() => {
         const buscarConta = async () => {
@@ -30,7 +42,6 @@ const Dados = () => {
     };
 
     function formatarData(data) {
-        debugger
         if (data) {
             const dataObj = new Date(data);
             const dia = String(dataObj.getUTCDate()).padStart(2, '0');
