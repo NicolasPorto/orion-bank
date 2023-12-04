@@ -307,7 +307,7 @@ function MontarHTMLValores(data: Date, tipoTransacao: string, descricao: string,
             align-items: center;
             justify-content: center;
         ">
-            ${descricao}
+            ${descricao.substring(0, 30)}
         </div>
 
         <div style="
