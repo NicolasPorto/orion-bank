@@ -11,7 +11,7 @@ export class AutenticacaoRepository implements IAutenticacaoRepository {
             conta.Login,
             conta.Senha
         ]
-
+        
         const sql = `SELECT 
                         *
                     FROM

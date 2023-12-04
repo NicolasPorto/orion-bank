@@ -56,7 +56,6 @@ const SolicitacoesConta = () => {
     }
 
     const aprovarSolicitacaoConta = async (solicitacao) => {
-        debugger
         await aprovarSolicitacao(solicitacao);
         refresh();
     };

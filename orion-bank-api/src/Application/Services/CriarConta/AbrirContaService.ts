@@ -124,12 +124,13 @@ export class AbrirContaService implements IAbrirContaService {
         const senha = th.GerarNumeroAleatorio(8)
         const codigo = uuidv4()
         
-        conta.Agencia = "0001"
-        conta.Conta = th.GerarNumeroAleatorio(8)
-        conta.ContaDigito = "8"
+        conta.Agencia = "0001";
+        conta.Conta = th.GerarNumeroAleatorio(8);
+        conta.ContaDigito = "8";
         conta.ContaPgto = `${conta.Conta}${conta.ContaDigito}` 
         conta.Senha = senha;
-        conta.Codigo = codigo
+        conta.Codigo = codigo;
+        conta.DtNasc = th.FormatarData(conta.DtNasc);
 
         await abrirContaRepository.EfetuarAberturaDeConta(conta, codigoSolicitacao);
 
@@ -386,6 +387,14 @@ export class AbrirContaService implements IAbrirContaService {
         } as AutenticacaoTokenDto
 
         return autenticador;
+
+    }
+
+    private FormatarData(data: any) : Date {
+
+        const teste = data.toString().split("/")
+
+        return new Date(`${teste[2]}-${teste[1]}-${teste[0]}`);
 
     }
 
