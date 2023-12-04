@@ -1,4 +1,4 @@
-import { Movimento } from "../../../domain/entities/Movimento";
+import { Movimento } from "../../../Domain/entities/Movimento";
 import { MovimentoPixDto } from "../../DTOs/MovimentoDto";
 import { MovimentoEMVDto } from "../../DTOs/MovimentoEMVDto";
 import { IMovimentoService } from "../../Interfaces/Movimento/IMovimentoService";
