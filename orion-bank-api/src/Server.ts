@@ -8,12 +8,13 @@ import "express-async-errors"
 const swaggerFile = require("../swagger_output.json");
 
 const app = Express();
-const port = process.env.PORT || 8080
 dotenv.config();
 
 app.use(cors());
 app.use(Express.json())
 app.use(router);
+
+const port = process.env.PORT || 8080
 
 app.use("/swagger/api", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
@@ -24,14 +25,6 @@ app.use(
             message: error.message
         });
     })
-
-app.get('/', (_req: Request, res: Response) => {
-    return res.send('Express Typescript on Vercel')
-})
-
-app.get('/ping', (_req: Request, res: Response) => {
-    return res.send('pong 🏓')
-})
 
 app.listen(port, () => {
     return console.log(`Server is listening on ${port}`)
