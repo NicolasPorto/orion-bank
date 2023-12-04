@@ -53,3 +53,11 @@
     border: 1px solid #cacaca;
     border-radius: 5px;
 }
+
+
+
+@media (max-width: 770px) {
+    .fs {
+        font-size: 10px;
+    }
+}

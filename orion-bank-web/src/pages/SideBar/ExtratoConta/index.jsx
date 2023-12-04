@@ -76,7 +76,8 @@ const ExtratoConta = () => {
         const mes = String(dataObj.getMonth() + 1).padStart(2, '0');
         const ano = dataObj.getFullYear().toString().slice(-2);
         const hora = dataObj.getHours();
-        const minuto = dataObj.getMinutes();
+        let minuto = dataObj.getMinutes();
+        minuto = parseInt(minuto) < 10 ? `0${parseInt(minuto)}` : minuto;
         return `${dia}/${mes}/${ano} ${hora}:${minuto}`;
     }
 

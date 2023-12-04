@@ -99,7 +99,7 @@ const SolicitacoesConta = () => {
                     </Modal.Footer>
                 </Modal>
                 <div className="table-solicitar">
-                    <Table striped bordered hover responsive>
+                    <Table striped bordered hover responsive="md">
                         <thead>
                             <tr>
                                 <th className="hidden">Codigo</th>
