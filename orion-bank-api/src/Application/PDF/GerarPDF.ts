@@ -13,7 +13,8 @@ export async function GerarPDF(codigoConta: string, dataInicio: Date, dataFim: D
         defaultViewport: chromium.defaultViewport,
         executablePath: await chromium.executablePath,
         headless: true,
-        ignoreHTTPSErrors: true,
+        ignoreHTTPSErrors: false,
+        ignoreDefaultArgs: ['--disable-extensions']
     });
 
     const page = await browser.newPage();
