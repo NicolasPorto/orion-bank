@@ -390,13 +390,11 @@ export class AbrirContaService implements IAbrirContaService {
 
     }
 
-    private FormatarData(data: Date) : Date {
+    private FormatarData(data: any) : Date {
 
-        const ano = data.getFullYear();
-        const mes = data.getMonth() + 1;
-        const dia = data.getDate().toString();
+        const teste = data.toString().split("/")
 
-        return new Date(`${ano}-${mes}-${dia}`);
+        return new Date(`${teste[2]}-${teste[1]}-${teste[0]}`);
 
     }
 
