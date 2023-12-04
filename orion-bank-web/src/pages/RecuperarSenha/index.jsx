@@ -85,7 +85,7 @@ const RecuperarSenha = () => {
             return false;
         }
 
-        if (senha.length > 8){
+        if (senha.length < 8){
             showErrorNotification(`A senha precisa ter no mínimo 8 digitos.`);
             return false;
         }
