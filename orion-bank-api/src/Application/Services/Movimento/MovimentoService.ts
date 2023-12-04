@@ -204,7 +204,7 @@ export class MovimentoService implements IMovimentoService {
             InfoAdicional: moviDto.infoAdicional,
             DescTransacao: moviDto.descTransacao,
             TipoTransacao: moviDto.tipoTransacao,
-            DtMovimento: new Date()
+            DtMovimento: this.SubtrairData(new Date())
         } as Movimento
     }
 
@@ -218,7 +218,7 @@ export class MovimentoService implements IMovimentoService {
             InfoAdicional: moviDto.infoAdicional,
             DescTransacao: moviDto.descTransacao,
             TipoTransacao: moviDto.tipoTransacao,
-            DtMovimento: new Date()
+            DtMovimento: this.SubtrairData(new Date())
         } as Movimento
     }
 
@@ -230,11 +230,14 @@ export class MovimentoService implements IMovimentoService {
             CodigoContaDestino: moviDto.codigoContaDestino,
             InfoAdicional: moviDto.descricao,
             TipoTransacao: TipoTransacao.Transferencia,
-            DtMovimento: new Date(),
+            DtMovimento: this.SubtrairData(new Date()),
             Valor: moviDto.valor,
             DescTransacao: TipoTransacao.TransferenciaString
         } as unknown as Movimento
 
     }
 
+    private SubtrairData(data: Date) : Date {
+        return new Date(data.setHours(data.getHours() - 3));
+    }
 }
