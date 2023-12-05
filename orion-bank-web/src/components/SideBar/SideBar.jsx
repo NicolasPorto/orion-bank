@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef  } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from "react-router-dom";
 import '@popperjs/core';
 import './styles.css';
@@ -24,11 +24,7 @@ const SideBar = ({ isOpen, sidebarData }) => {
     };
 
     useEffect(() => {
-        if (!isOpen) {
-            document.addEventListener('click', handleOutsideClick);
-        } else {
-            document.removeEventListener('click', handleOutsideClick);
-        }
+        document.addEventListener('click', handleOutsideClick);
 
         return () => {
             document.removeEventListener('click', handleOutsideClick);
