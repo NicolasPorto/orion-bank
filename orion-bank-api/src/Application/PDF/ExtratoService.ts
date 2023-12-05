@@ -28,7 +28,7 @@ export class ExtratoService implements IExtratoService {
         for(let cont = 0; cont < extrato.length; cont++) {
 
             extratoFormatado.push({
-                Data: extrato[cont].Data,
+                Data: this.SomarData(extrato[cont].Data),
                 TipoTransacao: extrato[cont].TipoTransacao,
                 Descricao: extrato[cont].Descricao,
                 Valor: extrato[cont].Valor.replace(",", ""),
@@ -42,5 +42,9 @@ export class ExtratoService implements IExtratoService {
         }
 
         return extratoFormatado
+    }
+
+    private SomarData(data: Date) : Date {
+        return new Date(data.setHours(data.getHours() + 3));
     }
 }

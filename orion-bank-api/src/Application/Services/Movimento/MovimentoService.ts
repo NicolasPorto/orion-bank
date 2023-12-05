@@ -68,7 +68,26 @@ export class MovimentoService implements IMovimentoService {
             throw new Error("Erro interno.")
         }
 
-        return await movimentoRepository.ObterUltimasTransacoes(codigoConta);
+        const movi = await movimentoRepository.ObterUltimasTransacoes(codigoConta);
+        let movimentos: Array<Movimento> = [];
+
+        for (let cont = 0; cont < movi.length; cont++) {
+            movimentos.push({
+                ID: movi[cont].ID,
+                Codigo: movi[cont].Codigo,
+                CodigoContaOrigem: movi[cont].CodigoContaOrigem,
+                CodigoContaDestino: movi[cont].CodigoContaDestino,
+                Valor: movi[cont].Valor,
+                Chave_Pix: movi[cont].Chave_Pix,
+                EMV: movi[cont].EMV,
+                InfoAdicional: movi[cont].InfoAdicional,
+                DescTransacao: movi[cont].DescTransacao,
+                TipoTransacao: movi[cont].TipoTransacao,
+                DtMovimento: this.SomarData(movi[cont].DtMovimento)
+            })
+        }
+
+        return movimentos;
     }
     
     async RealizarTransacaoPorDadosBancarios(movimento: MovimentoDadosBancariosDto): Promise<void> {
@@ -239,5 +258,9 @@ export class MovimentoService implements IMovimentoService {
 
     private SubtrairData(data: Date) : Date {
         return new Date(data.setHours(data.getHours() - 3));
+    }
+
+    private SomarData(data: Date) : Date {
+        return new Date(data.setHours(data.getHours() + 3));
     }
 }
