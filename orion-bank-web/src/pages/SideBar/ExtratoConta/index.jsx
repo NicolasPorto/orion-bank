@@ -106,8 +106,22 @@ const ExtratoConta = () => {
             const saldoFormatado = parseFloat(saldo).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             setSaldo(saldoFormatado);
         };
+
+        const data = formatarData(new Date().toDateString())
+        setdtInicio(data);
+        setdtFim(data);
         fetchSaldo();
     }, []);
+
+    function formatarData(data) {
+        if (data) {
+            const dataObj = new Date(data);
+            const dia = String(dataObj.getUTCDate()).padStart(2, '0');
+            const mes = String(dataObj.getUTCMonth() + 1).padStart(2, '0');
+            const ano = dataObj.getUTCFullYear();
+            return `${ano}-${mes}-${dia}`;
+        }
+    }
 
     return (
 
