@@ -1,38 +1,13 @@
 import { ExtratoRepository } from "../../Data/Repositories/Extrato/ExtratoRepository";
 import { TipoTransacao } from "../../Enums/TipoTransacao";
 import { ValidarDataInicioMenor } from "../../Middleware/ValidarData";
-import fs from 'fs';
-import htmlToPdf from 'html-pdf';
 
 const _extratoRepository = new ExtratoRepository()
 
 export async function GerarPDF(codigoConta: string, dataInicio: Date, dataFim: Date): Promise<string> {
     ValidarDataInicioMenor(dataInicio, dataFim);
 
-    const htmlContent = await PegarHTML(codigoConta, dataInicio, dataFim);
-
-    return new Promise<string>((resolve, reject) => {
-        const options: htmlToPdf.CreateOptions = {
-            format: 'A4',
-            border: {
-                top: '0.5in',
-                right: '0.5in',
-                bottom: '0.5in',
-                left: '0.5in'
-            },
-        };
-
-        // Converter HTML em PDF
-        htmlToPdf.create(htmlContent, options).toBuffer((err, buffer) => {
-            if (err) {
-                reject(err);
-            } else {
-                // Converte o buffer do PDF para base64
-                const base64PDF = buffer.toString('base64');
-                resolve(base64PDF);
-            }
-        });
-    });
+    return await PegarHTML(codigoConta, dataInicio, dataFim);
 }
 
 
