@@ -20,6 +20,7 @@ const Home = () => {
     const [nome, setNome] = useState("");
     const [elementoVisivel, setElementoVisivel] = useState(true);
     const [movimentos, setMovimentos] = useState([]);
+    const [notificacoes, setNotificacoes] = useState(false);
 
     const hideMoney = () => {
         setHideEye(!hideEye);
@@ -80,6 +81,13 @@ const Home = () => {
         fetchNome();
     }, []);
 
+    useEffect(() => {
+        if (!notificacoes) {
+            const localNotificado = localStorage.getItem("notificado");
+            setNotificacoes(localNotificado);
+        }
+    });
+
     return (
         <div className="content-wrapper home-page">
 
@@ -87,8 +95,15 @@ const Home = () => {
                 <div className="col-md-12 mb-4">
                     <div className="row">
                         <div className="col-12 col-x1-8 mb-4 mb-x1-0">
-                            <h3>Bem vindo, {nome}!</h3>
-                            <h6 className="mb-0"> <span style={{ color: '#EB4E50' }}>1</span> notificação não lida!</h6>
+                            <h3>Bem-vindo, {nome}!</h3>
+                            {!notificacoes && (
+                                <h6 className="mb-0"> <span style={{ color: '#EB4E50' }}>1</span> notificação não lida!</h6>
+                            )}
+
+                            {notificacoes && (
+                                <h6 className="mb-0"> <span style={{ color: '#EB4E50' }}>0</span> notificações recebidas!</h6>
+                            )}
+
                         </div>
                     </div>
                 </div>
@@ -145,7 +160,7 @@ const Home = () => {
                                     </div>
                                 </div>
                             </Link>
-                            <Link to="/" title="Conta">
+                            <Link to="/dados" title="Conta">
                                 <div className="card card-light-danger">
                                     <div className="btn-body">
                                         <img src={btnConta} alt=""></img>

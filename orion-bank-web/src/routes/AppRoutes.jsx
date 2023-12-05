@@ -24,7 +24,7 @@ import ErrorBoundary from "../components/ErrorBoundary/ErrorBoundary";
 const AppRoutes = () => {
 
     const Private = ({ children }) => {
-        const { authenticated, loading, validarToken } = useContext(AuthContext);
+        const { authenticated, loading } = useContext(AuthContext);
 
         if (loading) {
             return <div className="loading"> Carregando...</div>
@@ -33,8 +33,6 @@ const AppRoutes = () => {
         if (!authenticated) {
             return <Navigate to="/login" />
         }
-
-        validarToken();
 
         return children;
     }

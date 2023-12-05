@@ -33,7 +33,7 @@ export class AutenticacaoService implements IAutenticacaoService {
             },
             secret, 
             { 
-                expiresIn: '5m' 
+                expiresIn: '1h' 
             }
         );
 

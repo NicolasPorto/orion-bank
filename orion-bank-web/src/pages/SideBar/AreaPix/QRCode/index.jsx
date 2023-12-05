@@ -40,8 +40,8 @@ const QRCode = () => {
             valor: formatarValor(valor),
             infoAdicional: infoAdicional
         }
-
-        if (validarRequest()) {
+        
+        if (validarRequest() === true) {
             const response = await criarQRCodeEstatico(request);
             if (response !== undefined) {
                 setEMV(response.emv);
