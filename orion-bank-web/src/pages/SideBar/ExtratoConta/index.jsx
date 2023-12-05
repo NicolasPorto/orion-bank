@@ -7,6 +7,7 @@ import pageExtrato from "../../../assets/img/pageExtrato.svg";
 import Modal from 'react-bootstrap/Modal';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import html2pdf from 'html2pdf.js';
 import "./styles.css";
 
 
@@ -53,18 +54,17 @@ const ExtratoConta = () => {
 
         try {
             if (arquivo !== undefined) {
-                const binary = atob(arquivo);
-
-                const bytes = new Uint8Array(binary.length);
-                for (let i = 0; i < binary.length; i++) {
-                    bytes[i] = binary.charCodeAt(i);
-                }
-
-                const pdf = new Blob([bytes], { type: 'application/pdf' });
-                const url = URL.createObjectURL(pdf);
-                window.open(url);
+                const pdfElement = document.createElement('div');
+                pdfElement.innerHTML = arquivo;
+    
+                html2pdf(pdfElement, {
+                    margin: 10,
+                    filename: 'extrato.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                });
             }
-
         } catch (error) {
             showErrorNotification("Erro ao exportar o PDF.");
         }
