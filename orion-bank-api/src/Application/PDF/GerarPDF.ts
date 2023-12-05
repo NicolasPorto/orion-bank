@@ -1,35 +1,40 @@
 import { ExtratoRepository } from "../../Data/Repositories/Extrato/ExtratoRepository";
 import { TipoTransacao } from "../../Enums/TipoTransacao";
 import { ValidarDataInicioMenor } from "../../Middleware/ValidarData";
-import chromium from "chrome-aws-lambda";
+import fs from 'fs';
+import htmlToPdf from 'html-pdf';
 
 const _extratoRepository = new ExtratoRepository()
 
-export async function GerarPDF(codigoConta: string, dataInicio: Date, dataFim: Date) {
+export async function GerarPDF(codigoConta: string, dataInicio: Date, dataFim: Date): Promise<string> {
     ValidarDataInicioMenor(dataInicio, dataFim);
 
-    const browser = await chromium.puppeteer.launch({
-        args: [...chromium.args, "--hide-scrollbars", "--disable-web-security"],
-        defaultViewport: chromium.defaultViewport,
-        executablePath: await chromium.executablePath,
-        headless: true,
-        ignoreHTTPSErrors: false,
-        ignoreDefaultArgs: ['--disable-extensions']
+    const htmlContent = await PegarHTML(codigoConta, dataInicio, dataFim);
+
+    return new Promise<string>((resolve, reject) => {
+        const options: htmlToPdf.CreateOptions = {
+            format: 'A4',
+            border: {
+                top: '0.5in',
+                right: '0.5in',
+                bottom: '0.5in',
+                left: '0.5in'
+            },
+        };
+
+        // Converter HTML em PDF
+        htmlToPdf.create(htmlContent, options).toBuffer((err, buffer) => {
+            if (err) {
+                reject(err);
+            } else {
+                // Converte o buffer do PDF para base64
+                const base64PDF = buffer.toString('base64');
+                resolve(base64PDF);
+            }
+        });
     });
-
-    const page = await browser.newPage();
-
-    await page.setContent(await PegarHTML(codigoConta, dataInicio, dataFim));
-
-    const arquivo = await page.pdf({
-        path: 'exported_file.pdf',
-        format: 'a4',
-        landscape: false,
-    });
-
-    await browser.close();
-    return arquivo.toString('base64');
 }
+
 
 async function PegarHTML(codigoConta: string, dataInicio: Date, dataFim: Date): Promise<string> {
     return `
