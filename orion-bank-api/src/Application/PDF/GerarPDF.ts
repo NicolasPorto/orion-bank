@@ -10,7 +10,6 @@ export async function GerarPDF(codigoConta: string, dataInicio: Date, dataFim: D
     return await PegarHTML(codigoConta, dataInicio, dataFim);
 }
 
-
 async function PegarHTML(codigoConta: string, dataInicio: Date, dataFim: Date): Promise<string> {
     return `
     <html>
