@@ -11,7 +11,7 @@ export class SaldoRepository implements ISaldoRepository {
             uuidv4(),
             codigoConta,
             new Date(),
-            1000000
+            1000
         ]
 
         const sqlSaldo = `INSERT INTO
