@@ -6,7 +6,7 @@ import './styles.css';
 
 const Sino = ({ notificacao, message, count }) => {
     return (
-        <li className="nav-item">
+        <li className="nav-item sino">
             <Link className="nav-link count-indicator" id="notificationDropdown" data-toggle="dropdown">
                 <i>
                     <img src={Bell} alt="" />
