@@ -31,7 +31,7 @@ const TermosPolitica = () => {
                                                             <strong>2. Serviços Oferecidos</strong><br />
                                                             <strong>2.1. PIX (Sistema de Pagamentos Instantâneos):</strong> O Orion Bank oferece a opção de realizar transações instantâneas por meio do PIX, permitindo transferências de fundos em tempo real.<br />
                                                             <strong>2.2. PIX QR Code:</strong> Nosso serviço PIX QR Code permite que você receba pagamentos escaneando um código QR gerado pelo Orion Bank.<br />
-                                                            <strong>2.3. Transferências Bancárias:</strong> Facilitamos transferências entre contas do Orion Bank e outras instituições financeiras, seguindo os procedimentos e regulamentações estabelecidas para cada tipo de transferência.
+                                                            <strong>2.3. Transferências Bancárias:</strong> Facilitamos transferências entre contas do Orion Bank, seguindo os procedimentos e regulamentações estabelecidas para cada tipo de transferência.
                                                         </p>
 
                                                         <p>
