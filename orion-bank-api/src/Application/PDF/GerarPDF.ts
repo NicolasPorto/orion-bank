@@ -249,7 +249,6 @@ function MontarHTMLValores(data: Date, tipoTransacao: string, descricao: string,
         <div style="
             width: 80px;
             padding: 5px;
-            margin: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -260,7 +259,6 @@ function MontarHTMLValores(data: Date, tipoTransacao: string, descricao: string,
         <div style="
             width: 25px;
             padding: 5px;
-            margin: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -271,7 +269,6 @@ function MontarHTMLValores(data: Date, tipoTransacao: string, descricao: string,
         <div style="
             width: 140px;
             padding: 5px;
-            margin: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -282,7 +279,6 @@ function MontarHTMLValores(data: Date, tipoTransacao: string, descricao: string,
         <div style="
             width: 140px;
             padding: 5px;
-            margin: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -293,7 +289,6 @@ function MontarHTMLValores(data: Date, tipoTransacao: string, descricao: string,
         <div style="
             width: 100px;
             padding: 5px;
-            margin: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
