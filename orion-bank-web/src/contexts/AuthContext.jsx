@@ -93,9 +93,21 @@ export const AuthProvider = ({ children }) => {
         return tokenInfo?.Nome;
     }
 
+    const validarToken = () => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            const tokenInfo = getTokenInfo(JSON.parse(token));
+
+            if (tokenInfo.exp < Date.now() / 1000) {
+                showErrorNotification("Token expirado.");
+                logout();
+            }
+        }
+    }
+
     return (
         <AuthContext.Provider
-            value={{ authenticated: !!user, user, loading, login, logout, navigate, buscarTipoConta, getTokenInfo, buscarNomeUsuarioLogado }}>
+            value={{ authenticated: !!user, user, loading, login, logout, navigate, buscarTipoConta, getTokenInfo, buscarNomeUsuarioLogado, validarToken }}>
             {children}
         </AuthContext.Provider>
     );
