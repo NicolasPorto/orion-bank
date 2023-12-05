@@ -69,7 +69,7 @@
 }
 
 .move-button {
-    transform: translateX(-330%);
+    transform: translateX(-290%);
     transition: transform 0.5s;
 }
 
