@@ -36,9 +36,10 @@ const Home = () => {
         const dia = String(dataObj.getDate()).padStart(2, '0');
         const mes = String(dataObj.getMonth() + 1).padStart(2, '0');
         const ano = dataObj.getFullYear().toString().slice(-2);
-        const hora = dataObj.getHours();
+        let hora = dataObj.getHours();
         let minuto = dataObj.getMinutes();
         minuto = parseInt(minuto) < 10 ? `0${parseInt(minuto)}` : minuto;
+        hora = parseInt(hora) < 10 ? `0${parseInt(hora)}` : hora;
         return `${dia}/${mes}/${ano} ${hora}:${minuto}`;
     }
 
