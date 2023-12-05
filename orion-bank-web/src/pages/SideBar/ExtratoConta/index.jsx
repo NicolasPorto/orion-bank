@@ -107,13 +107,13 @@ const ExtratoConta = () => {
             setSaldo(saldoFormatado);
         };
 
-        const data = formatarData(new Date().toDateString())
+        const data = formatarDataModal(new Date().toDateString())
         setdtInicio(data);
         setdtFim(data);
         fetchSaldo();
     }, []);
 
-    function formatarData(data) {
+    function formatarDataModal(data) {
         if (data) {
             const dataObj = new Date(data);
             const dia = String(dataObj.getUTCDate()).padStart(2, '0');
