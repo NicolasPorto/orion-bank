@@ -29,6 +29,7 @@ const Pix = () => {
     const [infoAdicional, setInfoAdicional] = useState('');
     const [responseConsulta, setResponseConsulta] = useState({});
     const [qrCodeResult, setQRCodeResult] = useState('');
+    const [botaoDisabled, setBotaoDisabled] = useState(false);
 
     const openModalPixChave = () => {
         setOpenModalPixChave(true);
@@ -42,6 +43,7 @@ const Pix = () => {
         setChavesFavoritas([]);
         setEtapa(1);
         setOpenModalPixChave(false);
+        setBotaoDisabled(false);
     };
 
     const openModalPixCopiaCola = () => {
@@ -191,6 +193,7 @@ const Pix = () => {
 
     const enviarPixPorChave = async (e) => {
         e.preventDefault();
+        setBotaoDisabled(true);
         const request = {
             codigoContaDestino: responseConsulta.Codigo,
             codigoContaOrigem: '',
@@ -200,6 +203,7 @@ const Pix = () => {
         }
         await enviarPixViaChave(request);
         closeModalPixChave();
+        setBotaoDisabled(false);
     };
 
     const enviarPixPorEMV = async (e) => {
@@ -371,7 +375,7 @@ const Pix = () => {
                             Cancelar
                         </Button>
                         {etapa === 3 && (
-                            <Button variant="success" onClick={enviarPixPorChave}>
+                            <Button variant="success" disabled={botaoDisabled} onClick={enviarPixPorChave}>
                                 Confirmar
                             </Button>
                         )}
