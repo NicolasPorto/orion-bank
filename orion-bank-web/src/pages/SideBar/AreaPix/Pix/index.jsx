@@ -448,18 +448,16 @@ const Pix = () => {
                                             </div>
                                             <div className="mt-3">
                                                 <label className="add-mensagem" onClick={() => setInfoIsOn(true)}>Info Adicional</label>
-                                                {infoIsOn && (
-                                                    <input
-                                                        type="text"
-                                                        className="form-control infoAdicional"
-                                                        id="infoAdicional"
-                                                        placeholder="Mensagem"
-                                                        name="infoAdicional"
-                                                        maxLength={255}
-                                                        disabled
-                                                        value={responseConsulta.InfoAdicional}
-                                                    />
-                                                )}
+                                                <input
+                                                    type="text"
+                                                    className="form-control infoAdicional"
+                                                    id="infoAdicional"
+                                                    placeholder="Mensagem"
+                                                    name="infoAdicional"
+                                                    maxLength={255}
+                                                    disabled
+                                                    value={responseConsulta.InfoAdicional}
+                                                />
                                             </div>
                                         </div>
                                     </div>
