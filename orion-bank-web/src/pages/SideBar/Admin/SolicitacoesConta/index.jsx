@@ -15,6 +15,7 @@ const SolicitacoesConta = () => {
     const [solicitacoes, setSolicitacoes] = useState([]);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [selectedMensagemConta, setSelectedMensagemConta] = useState({});
+    const [botaoDisabled, setBotaoDisabled] = useState(false);
 
     useEffect(() => {
         refresh();
@@ -28,6 +29,7 @@ const SolicitacoesConta = () => {
     const closeModal = () => {
         setSelectedMensagemConta({});
         setModalIsOpen(false);
+        setBotaoDisabled(false);
     };
 
     function formatarData(data) {
@@ -56,13 +58,17 @@ const SolicitacoesConta = () => {
     }
 
     const aprovarSolicitacaoConta = async (solicitacao) => {
+        setBotaoDisabled(true);
         await aprovarSolicitacao(solicitacao);
         refresh();
+        setBotaoDisabled(false);
     };
 
     const reprovarSolicitacaoConta = async (codigo) => {
+        setBotaoDisabled(true);
         await reprovarSolicitacao(codigo);
         refresh();
+        setBotaoDisabled(false);
     };
 
     const refresh = async () => {
@@ -119,10 +125,10 @@ const SolicitacoesConta = () => {
                                         <Button variant="secondary" as="input" type="submit" value="Analisar" onClick={() => openModal(record.conta)} />
                                     </td>
                                     <td>
-                                        <Button variant="success" as="input" type="submit" value="Aprovar" onClick={() => aprovarSolicitacaoConta(record)} />
+                                        <Button variant="success" disabled={botaoDisabled} as="input" type="submit" value="Aprovar" onClick={() => aprovarSolicitacaoConta(record)} />
                                     </td>
                                     <td>
-                                        <Button variant="danger" as="input" type="submit" value="Reprovar" onClick={() => reprovarSolicitacaoConta(record.Codigo)} />
+                                        <Button variant="danger" disabled={botaoDisabled} as="input" type="submit" value="Reprovar" onClick={() => reprovarSolicitacaoConta(record.Codigo)} />
                                     </td>
                                 </tr>
                             ))}

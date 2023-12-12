@@ -17,6 +17,7 @@ const Transferir = () => {
     const [dadosBancarios, setDadosBancarios] = useState({ agencia: '', conta: '', contaDigito: '' });
     const [infoIsOn, setInfoIsOn] = useState(false);
     const [infoAdicional, setInfoAdicional] = useState('');
+    const [botaoDisabled, setBotaoDisabled] = useState(false);
 
     const openModalTransf = () => {
         setOpenModalTransf(true);
@@ -29,6 +30,7 @@ const Transferir = () => {
         setInfoAdicional('');
         setValor('R$ 0,00');
         setEtapa(1);
+        setBotaoDisabled(false);
     };
 
     const avancarEtapa = async () => {
@@ -72,7 +74,7 @@ const Transferir = () => {
             showErrorNotification("Informe o valor a pagar.");
             return false;
         }
-        
+
 
         return true;
     };
@@ -87,6 +89,7 @@ const Transferir = () => {
 
     const realizarTransferencia = async (e) => {
         e.preventDefault();
+        setBotaoDisabled(true);
         const request = {
             codigoContaOrigem: '',
             valor: formatarValor(valor),
@@ -96,6 +99,7 @@ const Transferir = () => {
             descricao: infoAdicional
         }
         const result = await enviarTransferencia(request);
+        setBotaoDisabled(false);
 
         if (result)
             closeModalTransf();
@@ -219,7 +223,7 @@ const Transferir = () => {
                         Cancelar
                     </Button>
                     {etapa === 2 && (
-                        <Button variant="success" onClick={realizarTransferencia}>
+                        <Button variant="success" disabled={botaoDisabled} onClick={realizarTransferencia}>
                             Confirmar
                         </Button>
                     )}
@@ -240,9 +244,3 @@ const Transferir = () => {
 };
 
 export default Transferir;
-
-// agencia: string;
-//     conta: string;
-//     contaDigito: string;
-//     valor: string;
-//     descricao: string

@@ -16,6 +16,7 @@ const SolicitarConta = () => {
     const solicitar = useContext(SolicitacoesContaContext).solicitar;
     const buscarCEPContext = useContext(BuscarCEPContext);
     const buscarCep = buscarCEPContext.buscarCep;
+    const [botaoDisabled, setBotaoDisabled] = useState(false);
     const camposChecagem = [
         'nome',
         'sobrenome',
@@ -91,6 +92,7 @@ const SolicitarConta = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setBotaoDisabled(true);
 
         validarPrenchimento();
         const todosPreenchidos = camposChecagem.every(fieldName => Boolean(solicitacaoRequest[fieldName]));
@@ -99,6 +101,7 @@ const SolicitarConta = () => {
             return;
 
         await solicitar(solicitacaoRequest);
+        setBotaoDisabled(false);
     };
 
     //#region Validações
@@ -369,7 +372,7 @@ const SolicitarConta = () => {
                                                         </div>
 
                                                         <div className="form-group">
-                                                            <button type="submit" className="botao-um"> Enviar </button>
+                                                            <button type="submit" disabled={botaoDisabled} className="botao-um"> Enviar </button>
                                                             <Link to="/login"><button type="button" className="botao-dois"> Cancelar </button></Link>
                                                         </div>
                                                     </div>

@@ -56,6 +56,7 @@ const Pix = () => {
         setEtapa(1);
         setEMV('');
         setInfoAdicional('');
+        setBotaoDisabled(false);
     };
 
     const openModalLerQrCode = () => {
@@ -68,6 +69,7 @@ const Pix = () => {
         setResponseConsulta({});
         setEtapa(1);
         setQRCodeResult('');
+        setBotaoDisabled(false);
     };
 
     const [etapa, setEtapa] = useState(1);
@@ -208,6 +210,7 @@ const Pix = () => {
 
     const enviarPixPorEMV = async (e) => {
         e.preventDefault();
+        setBotaoDisabled(true);
         const request = {
             codigoContaDestino: responseConsulta.Codigo,
             emv: EMV,
@@ -216,10 +219,12 @@ const Pix = () => {
         }
         await enviarPixViaEMV(request);
         closeModalPixCopiaCola();
+        setBotaoDisabled(false);
     };
 
     const enviarPixPorQRCode = async (e) => {
         e.preventDefault();
+        setBotaoDisabled(true);
         const request = {
             codigoContaDestino: responseConsulta.Codigo,
             emv: qrCodeResult,
@@ -228,6 +233,7 @@ const Pix = () => {
         }
         await enviarPixViaEMV(request);
         closeModalLerQrCode();
+        setBotaoDisabled(false);
     };
 
     const obterResultScan = (emv) => {
@@ -474,7 +480,7 @@ const Pix = () => {
                             Cancelar
                         </Button>
                         {etapa === 2 && (
-                            <Button variant="success" onClick={enviarPixPorEMV}>
+                            <Button variant="success" disabled={botaoDisabled} onClick={enviarPixPorEMV}>
                                 Confirmar
                             </Button>
                         )}
@@ -563,7 +569,7 @@ const Pix = () => {
                             Cancelar
                         </Button>
                         {etapa === 2 && (
-                            <Button variant="success" onClick={enviarPixPorQRCode}>
+                            <Button variant="success" disabled={botaoDisabled} onClick={enviarPixPorQRCode}>
                                 Confirmar
                             </Button>
                         )}

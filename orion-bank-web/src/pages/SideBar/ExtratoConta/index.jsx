@@ -56,7 +56,7 @@ const ExtratoConta = () => {
             if (arquivo !== undefined) {
                 const pdfElement = document.createElement('div');
                 pdfElement.innerHTML = arquivo;
-    
+
                 html2pdf(pdfElement, {
                     margin: 10,
                     filename: 'extrato.pdf',
@@ -90,6 +90,8 @@ const ExtratoConta = () => {
                 return 'Ted';
             case TipoTransacaoEnum.QrCode:
                 return 'QrCode';
+            case TipoTransacaoEnum.Transferencia:
+                return 'Transferência';
             default:
                 return 'Desconhecida';
         }

@@ -17,11 +17,13 @@ const RecuperarSenha = () => {
     const [senhaRepetida, setSenhaRepetida] = useState("");
     const [isAlteracao, setIsAlteracao] = useState(false);
     const [senhaDiferente, setSenhaDiferente] = useState(false);
+    const [botaoDisabled, setBotaoDisabled] = useState(false);
 
     //#region Chamadas
 
     const enviarEmailSenha = async (e) => {
         e.preventDefault();
+        setBotaoDisabled(true);
 
         if (documento === undefined || documento.replace(/\D/g, '').length < 11) {
             showErrorNotification("Preencha um documento válido.");
@@ -29,11 +31,12 @@ const RecuperarSenha = () => {
         }
 
         await enviarEmailRecuperacao(documento.replace(/\D/g, ''));
+        setBotaoDisabled(false);
     };
 
     const alterarSenha = async (e) => {
         e.preventDefault();
-        
+        setBotaoDisabled(true);
         if (!validarCampos()){
             return;
         }
@@ -45,6 +48,7 @@ const RecuperarSenha = () => {
         }
 
         await recuperarSenha(request);
+        setBotaoDisabled(false);
     };
 
     //#endregion
@@ -133,7 +137,7 @@ const RecuperarSenha = () => {
                                                     </div>
 
                                                     <div className="form-group">
-                                                        <button type="submit" className="botao-um"> Recuperar </button>
+                                                        <button type="submit" disabled={botaoDisabled} className="botao-um"> Recuperar </button>
                                                         <Link to="/login"><button type="button" className="botao-dois"> Cancelar </button></Link>
                                                     </div>
                                                 </form>
@@ -192,7 +196,7 @@ const RecuperarSenha = () => {
                                                     </div>
 
                                                     <div className="form-group">
-                                                        <button type="submit" className="botao-um"> Recuperar </button>
+                                                        <button type="submit" disabled={botaoDisabled} className="botao-um"> Recuperar </button>
                                                         <Link to="/login"><button type="button" className="botao-dois"> Cancelar </button></Link>
                                                     </div>
                                                 </form>

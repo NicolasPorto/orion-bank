@@ -20,9 +20,11 @@ const CadastrarChave = () => {
     const [chaves, setChaves] = useState([]);
     const [tamanho, setTamanho] = useState(11);
     const [cadastrarChavePix, setCadastrarChavePix] = useState({ codigoConta: "", chavePix: "", tipoChave: 1 });
+    const [botaoDisabled, setBotaoDisabled] = useState(false);
 
     const cadastrarChave = async (e) => {
         e.preventDefault();
+        setBotaoDisabled(true);
         const isValid = validarChavePix();
 
         if (isValid) {
@@ -31,6 +33,7 @@ const CadastrarChave = () => {
             limparCampos();
             closeModal();
         }
+        setBotaoDisabled(false);
     };
 
     const excluirChave = async (codigoChave) => {
@@ -137,6 +140,7 @@ const CadastrarChave = () => {
 
     const closeModal = () => {
         setModalIsOpen(false);
+        setBotaoDisabled(false);
     };
 
     return (
@@ -189,7 +193,7 @@ const CadastrarChave = () => {
                         <Button variant="danger" onClick={closeModal}>
                             Cancelar
                         </Button>
-                        <Button className="button-criar" type="submit" onClick={cadastrarChave} variant="success">
+                        <Button className="button-criar" disabled={botaoDisabled} type="submit" onClick={cadastrarChave} variant="success">
                             Criar
                         </Button>
                     </Modal.Footer>
