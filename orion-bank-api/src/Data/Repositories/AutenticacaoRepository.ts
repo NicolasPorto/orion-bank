@@ -17,7 +17,7 @@ export class AutenticacaoRepository implements IAutenticacaoRepository {
                     FROM
                         conta
                     WHERE (DocumentoFederal = ? AND Senha = MD5(?));`
-
+        
         const autenticacao = await (await connection).query(
             sql,
             parametros) as unknown as Conta;

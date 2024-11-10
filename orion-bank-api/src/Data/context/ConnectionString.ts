@@ -5,9 +5,10 @@ dotenv.config();
 
 const connection = mysql.createPool({
     host: process.env.HOST_BANCO,
-    user: process.env.USER_NOME_BANCO,
+    user: process.env.USER_BANCO,
     password: process.env.SENHA_BANCO,
     database: process.env.USER_NOME_BANCO,
+    port: 27682,
     waitForConnections: true,
     connectionLimit: 15,
     queueLimit: 0

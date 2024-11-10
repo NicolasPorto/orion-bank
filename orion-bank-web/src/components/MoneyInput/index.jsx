@@ -13,6 +13,7 @@ const CurrencyInput = ({ value, onValueChange, className }) => {
     <NumericFormat
       className={className}  
       value={value}
+      placeholder="R$"
       thousandSeparator="."
       decimalSeparator=","
       prefix="R$ "
