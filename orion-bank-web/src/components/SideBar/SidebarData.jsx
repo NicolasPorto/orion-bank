@@ -8,90 +8,90 @@ import Arrow from "../../assets/img/arrow-sidebar.svg";
 
 export const SidebarData = [
   {
-    title: 'Home',
-    path: '/',
+    title: "Home",
+    path: "/",
     icon: NavHome,
     iconClosed: NavHome,
-    iconOpened: NavHome
+    iconOpened: NavHome,
   },
   {
-    title: 'Admin',
+    title: "Admin",
     icon: NavAdmin,
     arrow: Arrow,
     iconClosed: NavAdmin,
     iconOpened: NavAdmin,
     subNav: [
       {
-        title: 'Solicitações de Conta',
-        cName: 'sub-nav',
-        path: '/solicitacoesConta'
-      }
-    ]
+        title: "Solicitações de Conta",
+        cName: "sub-nav",
+        path: "/solicitacoesConta",
+      },
+    ],
   },
   {
-    title: 'Extrato',
+    title: "Extrato",
     icon: NavExtrato,
     arrow: Arrow,
     iconClosed: NavExtrato,
     iconOpened: NavExtrato,
     subNav: [
       {
-        title: 'Consultar',
-        path: '/extratoConta',
-        cName: 'sub-nav',
-      }
-    ]
+        title: "Consultar",
+        path: "/extratoConta",
+        cName: "sub-nav",
+      },
+    ],
   },
   {
-    title: 'Transferencias',
+    title: "Transferencias",
     icon: NavTransf,
     arrow: Arrow,
     iconClosed: NavTransf,
     iconOpened: NavTransf,
     subNav: [
       {
-        title: 'Transferir',
-        path: 'transferir',
-        cName: 'sub-nav'
-      }
-    ]
+        title: "Transferir",
+        path: "transferir",
+        cName: "sub-nav",
+      },
+    ],
   },
   {
-    title: 'Area Pix',
+    title: "Area Pix",
     icon: NavPix,
     arrow: Arrow,
     iconClosed: NavPix,
     iconOpened: NavPix,
     subNav: [
       {
-        title: 'Cadastrar Chave',
-        path: 'cadastrarChave',
-        cName: 'sub-nav'
+        title: "Cadastrar Chave",
+        path: "cadastrarChave",
+        cName: "sub-nav",
       },
       {
-        title: 'Criar QR Code',
-        path: 'criarQRCode',
-        cName: 'sub-nav'
+        title: "Criar QR Code",
+        path: "criarQRCode",
+        cName: "sub-nav",
       },
       {
-        title: 'Pix',
-        path: 'pix',
-        cName: 'sub-nav'
-      }
-    ]
+        title: "Pix",
+        path: "pix",
+        cName: "sub-nav",
+      },
+    ],
   },
   {
-    title: 'Conta',
+    title: "Conta",
     icon: NavUser,
     arrow: Arrow,
     iconClosed: NavUser,
     iconOpened: NavUser,
     subNav: [
       {
-        title: 'Dados',
-        path: 'dados',
-        cName: 'sub-nav'
-      }
-    ]
+        title: "Dados",
+        path: "dados",
+        cName: "sub-nav",
+      },
+    ],
   },
 ];

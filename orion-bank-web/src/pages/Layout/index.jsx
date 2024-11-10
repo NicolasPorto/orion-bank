@@ -9,7 +9,7 @@ import './styles.css'
 
 const Layout = () => {
     const { logout, buscarTipoConta } = useContext(AuthContext);
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const tipoConta = buscarTipoConta();
 
     const toggleSidebar = () => {
