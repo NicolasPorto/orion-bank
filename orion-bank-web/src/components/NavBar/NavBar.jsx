@@ -9,8 +9,8 @@ import "@popperjs/core";
 import "./styles.css";
 
 const NavBar = ({ toggleSidebar }) => {
-  const [logoVisible, setLogoVisible] = useState(true);
-  const [buttonClicked, setButtonClicked] = useState(false);
+  const [logoVisible, setLogoVisible] = useState(false);
+  const [buttonClicked, setButtonClicked] = useState(true);
   const { logout } = useContext(AuthContext);
 
   const handleLogout = () => {
